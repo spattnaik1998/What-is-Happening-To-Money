@@ -1,0 +1,17 @@
+# Federal Reserve Analysis Dashboard Requirements
+# Core web framework
+streamlit
+
+# Data manipulation and analysis
+pandas
+numpy
+
+# Data visualization
+matplotlib
+plotly
+
+# HTTP requests for API calls
+requests
+
+# Environment variable management
+python-dotenv
