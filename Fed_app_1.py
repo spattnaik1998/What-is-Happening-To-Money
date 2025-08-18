@@ -286,7 +286,7 @@ st.markdown("""
 st.markdown('<h1 class="main-header">🏛️ The Federal Reserve Analysis Dashboard</h1>', unsafe_allow_html=True)
 st.markdown('''
 <div class="dedication">
-"This dashboard presents a detailed analysis of inflation, government spending, and monetary manipulation."
+"This dashboard presents a detailed analysis of inflation, government spending, and interest rates."
 <br><br>
 </div>
 ''', unsafe_allow_html=True)
@@ -393,7 +393,7 @@ FRED_SERIES = {
 
 # Main analysis section
 if analysis_type == "Complete Analysis":
-    st.header("🎯 The Complete Analysis: Exposing the Fed's Impact")
+    st.header("🎯 The Complete Analysis of the Federal Reserve.")
     
     # Get date range based on time period selection
     start_date, end_date = get_date_range(time_period)
@@ -490,11 +490,11 @@ if analysis_type == "Complete Analysis":
             )
         
         fig.update_layout(height=800, showlegend=False, 
-                         title_text="Ron Paul's Warnings Visualized: The Fed's Economic Manipulation")
+                         title_text="The Fed's Economic Analysis.")
         st.plotly_chart(fig, use_container_width=True)
         
         # Correlation Analysis
-        st.subheader("🔗 The Dangerous Correlations Ron Paul Warned About")
+        st.subheader("🔗 The Correlation of the metrics part of the Federal Reserve Repository.")
         
         # Calculate correlations between key metrics
         if len(data_dict) >= 3:
@@ -519,7 +519,7 @@ if analysis_type == "Complete Analysis":
                 
 
 elif analysis_type == "Fiscal Policy Deep Dive":
-    st.header("💸 Fiscal Policy Deep Dive: The Spending Addiction")
+    st.header("💸 Fiscal Policy Deep Dive")
     
     # Get date range based on time period selection
     start_date, end_date = get_date_range(time_period)
@@ -573,7 +573,7 @@ elif analysis_type == "Fiscal Policy Deep Dive":
             """, unsafe_allow_html=True)
 
 elif analysis_type == "Monetary Policy Exposure":
-    st.header("🖨️ Monetary Policy Exposure: The Money Printing Machine")
+    st.header("🖨️ Monetary Policy Analysis")
     
     # Get date range based on time period selection
     start_date, end_date = get_date_range(time_period)
@@ -583,7 +583,7 @@ elif analysis_type == "Monetary Policy Exposure":
     monetary_series = ['M1SL', 'M2SL', 'BASE', 'CPIAUCSL', 'FEDFUNDS']
     monetary_data = {}
     
-    with st.spinner("Exposing the Fed's monetary manipulation..."):
+    with st.spinner("The Fed Monetary Analysis..."):
         for series in monetary_series:
             df = fetch_fred_data(series, api_key, start_date, end_date)
             if not df.empty:
@@ -593,7 +593,7 @@ elif analysis_type == "Monetary Policy Exposure":
         # Money supply growth chart
         fig = make_subplots(
             rows=2, cols=1,
-            subplot_titles=('Money Supply Explosion', 'The Inflation Consequence'),
+            subplot_titles=('Money Supply', 'Inflation'),
             vertical_spacing=0.1
         )
         
@@ -623,7 +623,7 @@ elif analysis_type == "Monetary Policy Exposure":
                 row=2, col=1
             )
         
-        fig.update_layout(height=800, title_text="The Fed's Money Printing and Its Inflationary Consequences")
+        fig.update_layout(height=800, title_text="The Money Printing and Inflationary Consequences")
         st.plotly_chart(fig, use_container_width=True)
         
         # Calculate money supply growth rates
@@ -685,8 +685,8 @@ elif analysis_type == "Dollar Debasement Tracker":
         
         st.markdown(f"""
         <div class="warning-box">
-        <strong>💀 Dollar Purchasing Power Lost Since {first_date}: {destruction_pct:.1f}%</strong><br>
-        What cost $1.00 in {first_date} now costs ${1/current_power:.2f}. This demonstrates the hidden tax of inflation.
+        <strong>💀 Dollar Purchasing Power Since {first_date}: {destruction_pct:.1f}%</strong><br>
+        What cost $1.00 in {first_date} now costs ${1/current_power:.2f}.
         </div>
         """, unsafe_allow_html=True)
 
@@ -916,7 +916,7 @@ elif analysis_type == "Fiat Currency Era (Post-1971)":
             )
         
         fig.update_layout(height=800, showlegend=False, 
-                         title_text="The Fiat Currency Disaster: Ron Paul's Predictions Realized")
+                         title_text="The Consumer Impact of Fiat Currency.")
         st.plotly_chart(fig, use_container_width=True)
         
         # Decade-by-decade breakdown
